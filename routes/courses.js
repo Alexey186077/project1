@@ -3,7 +3,7 @@ var router = express.Router();
 
 let courses = require('../controllers/courses')
 
-/* GET home page. */
+/* GET courses page. */
 router.get('/courses', courses.courses);
 
 module.exports = router;

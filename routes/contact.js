@@ -3,7 +3,7 @@ var router = express.Router();
 
 let contact = require('../controllers/contact')
 
-/* GET home page. */
+/* GET contact page. */
 router.get('/contact', contact.contact);
 
 module.exports = router;

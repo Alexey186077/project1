@@ -4,13 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var home = require('./routes/home');
-var about = require('./routes/about');
-var courses = require('./routes/courses');
-var trainer = require('./routes/trainer');
-var events = require('./routes/events');
-var princing = require('./routes/princing');
-var contact = require('./routes/contact');
+var homeRouter = require('./routes/home');
+var aboutRouter = require('./routes/about');
+var coursesRouter = require('./routes/courses');
+var trainerRouter = require('./routes/trainer');
+var eventsRouter = require('./routes/events');
+var princingRouter = require('./routes/princing');
+var contactRouter = require('./routes/contact');
 
 
 var app = express();
@@ -25,13 +25,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', home);
-app.use('/about', about);
-app.use('/courses', courses);
-app.use('/trainer', trainer);
-app.use('/events', events);
-app.use('/princing', princing);
-app.use('/contact', contact);
+app.use('/', homeRouter);
+app.use('/about', aboutRouter);
+app.use('/courses', coursesRouter);
+app.use('/trainer', trainerRouter);
+app.use('/events', eventsRouter);
+app.use('/princing', princingRouter);
+app.use('/contact', contactRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

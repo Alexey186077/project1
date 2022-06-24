@@ -3,7 +3,7 @@ var router = express.Router();
 
 let princing = require('../controllers/princing')
 
-/* GET home page. */
+/* GET princing page. */
 router.get('/princing', princing.princing);
 
 module.exports = router;
